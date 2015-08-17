@@ -7,6 +7,9 @@ package papeleriabbdii;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -48,16 +51,47 @@ public class InterfazPapeleria extends javax.swing.JFrame {
         LABEL = new javax.swing.JLabel();
         IDPRODUCTO = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
+        BUSCARTODOS = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        MOSTRARTODOS = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel9 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        IDCOSTO = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        IDPRODUCTOS = new javax.swing.JTextField();
+        CANTIDAD = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        COSTOCOMPRA = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        COSTOVENTA = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        TOTAL = new javax.swing.JTextField();
+        GUARDARREGISTRO = new javax.swing.JButton();
+        ESTATUSS = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
+        BUSCAREGISTROS = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        COSTOSPRODUCTO = new javax.swing.JTable();
+        BUSCARID = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jTabbedPane4 = new javax.swing.JTabbedPane();
         jPanel13 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        IDVENDEDOR = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        IDPRODUCT = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        VENDEDOR = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        HORARIO = new javax.swing.JTextField();
+        GUARDARDATOS = new javax.swing.JButton();
+        ESTATU = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
 
@@ -161,15 +195,50 @@ public class InterfazPapeleria extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("INGRESAR PRODUCTO", jPanel8);
 
+        BUSCARTODOS.setText("BUSCAR TODOS");
+        BUSCARTODOS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BUSCARTODOSActionPerformed(evt);
+            }
+        });
+
+        MOSTRARTODOS.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        MOSTRARTODOS.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID PRODUCTO", "NOMBRE", "TIPO", "PIEZAS"
+            }
+        ));
+        jScrollPane2.setViewportView(MOSTRARTODOS);
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(BUSCARTODOS, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(BUSCARTODOS)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(220, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("BUSCAR TODOS", jPanel6);
@@ -204,30 +273,158 @@ public class InterfazPapeleria extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(153, 255, 153));
 
-        jTabbedPane3.setTabPlacement(javax.swing.JTabbedPane.RIGHT);
+        jTabbedPane3.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("INGRESA ID COSTO");
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("INGRESA ID PRODUCTO");
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("CANTIDAD");
+
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("COSTO DE COMPRA");
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("COSTO DE VENTA");
+
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("TOTAL");
+
+        GUARDARREGISTRO.setText("GUARDAR REGISTRO");
+        GUARDARREGISTRO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GUARDARREGISTROActionPerformed(evt);
+            }
+        });
+
+        ESTATUSS.setText("ESTATUS: ");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 542, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CANTIDAD)
+                            .addComponent(IDPRODUCTOS, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(IDCOSTO)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(77, 77, 77)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(COSTOVENTA)
+                            .addComponent(COSTOCOMPRA)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(TOTAL)))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(111, 111, 111)
+                        .addComponent(GUARDARREGISTRO, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(ESTATUSS, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(129, 129, 129))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 361, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(IDCOSTO, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(COSTOCOMPRA, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(IDPRODUCTOS, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(COSTOVENTA)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(CANTIDAD, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TOTAL, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(GUARDARREGISTRO, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(ESTATUSS, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(83, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("INGRESAR COSTO", jPanel9);
+
+        BUSCAREGISTROS.setText("BUSCAR REGISTROS");
+        BUSCAREGISTROS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BUSCAREGISTROSActionPerformed(evt);
+            }
+        });
+
+        COSTOSPRODUCTO.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID COSTO", "ID_PRODUCTO", "CANTIDAD", "COSTO COMPRA", "COSTO VENTA", "TOTAL"
+            }
+        ));
+        jScrollPane3.setViewportView(COSTOSPRODUCTO);
+
+        BUSCARID.setText("BUSCAR POR ID");
+        BUSCARID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BUSCARIDActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 542, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(177, 177, 177)
+                        .addComponent(BUSCAREGISTROS))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addComponent(BUSCARID, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 361, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(BUSCAREGISTROS)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BUSCARID)
+                .addContainerGap(204, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("BUSCAR TODOS", jPanel10);
@@ -236,11 +433,11 @@ public class InterfazPapeleria extends javax.swing.JFrame {
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 542, Short.MAX_VALUE)
+            .addGap(0, 543, Short.MAX_VALUE)
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 361, Short.MAX_VALUE)
+            .addGap(0, 407, Short.MAX_VALUE)
         );
 
         jTabbedPane3.addTab("BUSCAR POR ID", jPanel11);
@@ -249,14 +446,14 @@ public class InterfazPapeleria extends javax.swing.JFrame {
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 542, Short.MAX_VALUE)
+            .addGap(0, 543, Short.MAX_VALUE)
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 361, Short.MAX_VALUE)
+            .addGap(0, 407, Short.MAX_VALUE)
         );
 
-        jTabbedPane3.addTab("ACRUALIZAR COSTO", jPanel12);
+        jTabbedPane3.addTab("ACTUALIZAR COSTO", jPanel12);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -273,17 +470,71 @@ public class InterfazPapeleria extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(153, 255, 153));
 
-        jTabbedPane4.setTabPlacement(javax.swing.JTabbedPane.RIGHT);
+        jTabbedPane4.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("ID VENDEDOR");
+
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("ID PRODUCTO");
+
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("NOMBRE");
+
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("HORARIO");
+
+        GUARDARDATOS.setText("GUARDAR DATOS");
+        GUARDARDATOS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GUARDARDATOSActionPerformed(evt);
+            }
+        });
+
+        ESTATU.setText("ESTATUS:");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 525, Short.MAX_VALUE)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VENDEDOR)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+                    .addComponent(IDVENDEDOR)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(IDPRODUCT, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(GUARDARDATOS, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+                    .addComponent(HORARIO)
+                    .addComponent(ESTATU, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE))
+                .addContainerGap(196, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 361, Short.MAX_VALUE)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(IDVENDEDOR, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(IDPRODUCT, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(VENDEDOR, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(HORARIO, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(GUARDARDATOS)
+                .addGap(18, 18, 18)
+                .addComponent(ESTATU, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+                .addGap(19, 19, 19))
         );
 
         jTabbedPane4.addTab("INGRESAR VENDEDOR", jPanel13);
@@ -296,7 +547,7 @@ public class InterfazPapeleria extends javax.swing.JFrame {
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 361, Short.MAX_VALUE)
+            .addGap(0, 407, Short.MAX_VALUE)
         );
 
         jTabbedPane4.addTab("BUSCAR EMPLEADOS", jPanel14);
@@ -309,7 +560,7 @@ public class InterfazPapeleria extends javax.swing.JFrame {
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 361, Short.MAX_VALUE)
+            .addGap(0, 407, Short.MAX_VALUE)
         );
 
         jTabbedPane4.addTab("ACTUALIZAR EMPLEADO", jPanel15);
@@ -363,8 +614,8 @@ public class InterfazPapeleria extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
         pack();
@@ -392,6 +643,145 @@ public class InterfazPapeleria extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_GUARDARPRODUCTOActionPerformed
+
+    private void GUARDARREGISTROActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GUARDARREGISTROActionPerformed
+        // TODO add your handling code here:
+
+        try { 
+        Conexion c=new Conexion();
+        Connection con=c.conectarse();
+        
+     CallableStatement callate2=con.prepareCall("{call GUARDAR_COSTO(?,?,?,?,?,?)}");
+        callate2.setInt(1,Integer.parseInt(IDCOSTO.getText()));
+        callate2.setInt(2,Integer.parseInt(IDPRODUCTOS.getText()));
+        callate2.setFloat(3,Float.parseFloat(CANTIDAD.getText()));
+        callate2.setFloat(4,Float.parseFloat(COSTOCOMPRA.getText()));
+        callate2.setFloat(5,Float.parseFloat(COSTOVENTA.getText()));
+        callate2.setFloat(6,Float.parseFloat(TOTAL.getText()));
+        
+      callate2.execute();
+        con.close();
+        ESTATUSS.setText("LOS DATOS SE HAN GUARDADO");
+        }catch(Exception e){
+            ESTATUSS.setText(e.getMessage());
+            
+        }
+ 
+        
+    }//GEN-LAST:event_GUARDARREGISTROActionPerformed
+
+    private void GUARDARDATOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GUARDARDATOSActionPerformed
+        // TODO add your handling code here:
+        
+        
+         try { 
+        Conexion c=new Conexion();
+        Connection con=c.conectarse();
+        
+     CallableStatement callate3=con.prepareCall("{call GUARDAR_VENDEDORES(?,?,?,?)}");
+        callate3.setInt(1,Integer.parseInt(IDVENDEDOR.getText()));
+        callate3.setInt(2,Integer.parseInt(IDPRODUCT.getText()));
+        callate3.setString(3,VENDEDOR.getText());
+        callate3.setInt(4,Integer.parseInt(HORARIO.getText()));
+        
+      callate3.execute();
+        con.close();
+        ESTATU.setText("DATOS GUARDADOS");
+        }catch(Exception e){
+            ESTATU.setText(e.getMessage());
+            
+        }
+        
+        
+        
+    }//GEN-LAST:event_GUARDARDATOSActionPerformed
+
+    private void BUSCARTODOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BUSCARTODOSActionPerformed
+        // TODO add your handling code here:
+        
+        
+              try{
+          //paso 1) establecer conexion a Oracle
+           Connection con=Conexion.conectarse();
+           //paso 2) crear un Statement (sentencia) de sql
+           Statement st=con.createStatement();
+           //paso 3) con el statement invocamos la consulta
+           ResultSet res=st.executeQuery("SELECT * FROM PRODUCTO order by ID_PRODUCTO");
+          //paso 4) iteramos el ResultSet con un hermoso while 
+           int filas=0;
+           while(res.next()){
+               filas++;
+           } 
+           MOSTRARTODOS.
+           setModel(new DefaultTableModel(new String[]
+                   {"ID","NOMBRE","TIPO","PIEZAS"},filas)); 
+           int fila=0;
+           ResultSet res2=st.executeQuery("SELECT * FROM PRODUCTO order by ID_PRODUCTO");
+           while(res2.next()){
+               Integer ID= res2.getInt(1);
+               String NOMBRE= res2.getString(2);
+               String TIPO= res2.getString(3);
+               Integer PIEZAS= res2.getInt(4);
+               MOSTRARTODOS.setValueAt(ID, fila, 0);
+               MOSTRARTODOS.setValueAt(NOMBRE, fila, 1);
+               MOSTRARTODOS.setValueAt(TIPO, fila, 2);
+               MOSTRARTODOS.setValueAt(PIEZAS, fila, 3);
+               fila++;
+           }
+       }catch(Exception e){   
+     // System.out.println(e.getMessage());
+       } 
+        
+        
+        
+    }//GEN-LAST:event_BUSCARTODOSActionPerformed
+
+    private void BUSCARIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BUSCARIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BUSCARIDActionPerformed
+
+    private void BUSCAREGISTROSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BUSCAREGISTROSActionPerformed
+        // TODO add your handling code here:
+        
+        
+        try{
+          //paso 1) establecer conexion a Oracle
+           Connection con=Conexion.conectarse();
+           //paso 2) crear un Statement (sentencia) de sql
+           Statement st=con.createStatement();
+           //paso 3) con el statement invocamos la consulta
+           ResultSet res3=st.executeQuery("SELECT * FROM PRODUCTO order by ID_PRODUCTO");
+          //paso 4) iteramos el ResultSet con un hermoso while 
+           int filas=0;
+           while(res3.next()){
+               filas++;
+           } 
+           COSTOSPRODUCTO.
+           setModel(new DefaultTableModel(new String[]
+                   {"ID COSTO","ID PRODUCTO","CANTIDAD","COSTO COMPRA","COSTO VENTA","TOTAL"},filas)); 
+           int fila=0;
+           ResultSet res4=st.executeQuery("SELECT * FROM COSTO order by ID_COSTO");
+           while(res4.next()){
+               Integer IDCOS= res4.getInt(1);
+               Integer IDPRO= res4.getInt(2);
+               Integer CANTIDAD= res4.getInt(3);
+               Float COSCOMPRA= res4.getFloat(4);
+               Float COSVENTA= res4.getFloat(5);
+               Float TOTAL= res4.getFloat(6);
+               
+               COSTOSPRODUCTO.setValueAt(IDCOS, fila, 0);
+               COSTOSPRODUCTO.setValueAt(IDPRO, fila, 1);
+               COSTOSPRODUCTO.setValueAt(CANTIDAD, fila, 2);
+               COSTOSPRODUCTO.setValueAt(COSCOMPRA, fila, 3);
+               COSTOSPRODUCTO.setValueAt(COSVENTA, fila, 4);
+               COSTOSPRODUCTO.setValueAt(TOTAL, fila, 5);
+               fila++;
+           }
+       }catch(Exception e){   
+     // System.out.println(e.getMessage());
+
+       } 
+    }//GEN-LAST:event_BUSCAREGISTROSActionPerformed
 
     /**
      * @param args the command line arguments
@@ -429,17 +819,46 @@ public class InterfazPapeleria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BUSCAREGISTROS;
+    private javax.swing.JButton BUSCARID;
+    private javax.swing.JButton BUSCARTODOS;
+    private javax.swing.JTextField CANTIDAD;
+    private javax.swing.JTextField COSTOCOMPRA;
+    private javax.swing.JTable COSTOSPRODUCTO;
+    private javax.swing.JTextField COSTOVENTA;
+    private javax.swing.JLabel ESTATU;
     private javax.swing.JLabel ESTATUS;
+    private javax.swing.JLabel ESTATUSS;
+    private javax.swing.JButton GUARDARDATOS;
     private javax.swing.JButton GUARDARPRODUCTO;
+    private javax.swing.JButton GUARDARREGISTRO;
+    private javax.swing.JTextField HORARIO;
+    private javax.swing.JTextField IDCOSTO;
+    private javax.swing.JTextField IDPRODUCT;
     private javax.swing.JTextField IDPRODUCTO;
+    private javax.swing.JTextField IDPRODUCTOS;
+    private javax.swing.JTextField IDVENDEDOR;
     private javax.swing.JLabel LABEL;
+    private javax.swing.JTable MOSTRARTODOS;
     private javax.swing.JTextField NOMBREPRODUCTO;
     private javax.swing.JTextField PIEZAS;
     private javax.swing.JTextArea TIPOPRODUCTO;
+    private javax.swing.JTextField TOTAL;
+    private javax.swing.JTextField VENDEDOR;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -455,6 +874,8 @@ public class InterfazPapeleria extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
