@@ -55,6 +55,10 @@ public class InterfazPapeleria extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         MOSTRARTODOS = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        PRODUCTOSID = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel9 = new javax.swing.JPanel();
@@ -76,8 +80,11 @@ public class InterfazPapeleria extends javax.swing.JFrame {
         BUSCAREGISTROS = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         COSTOSPRODUCTO = new javax.swing.JTable();
-        BUSCARID = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
+        jTextField2 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        BUSCARXID = new javax.swing.JTable();
         jPanel12 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jTabbedPane4 = new javax.swing.JTabbedPane();
@@ -93,6 +100,10 @@ public class InterfazPapeleria extends javax.swing.JFrame {
         GUARDARDATOS = new javax.swing.JButton();
         ESTATU = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
+        jTextField3 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        EMPLEADOSXID = new javax.swing.JTable();
         jPanel15 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -238,20 +249,60 @@ public class InterfazPapeleria extends javax.swing.JFrame {
                 .addComponent(BUSCARTODOS)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addContainerGap(358, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("BUSCAR TODOS", jPanel6);
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("BUSCAR POR ID");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        PRODUCTOSID.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID PRODUCTO", "NOMBRE", "TIPO", "PIEZAS"
+            }
+        ));
+        jScrollPane4.setViewportView(PRODUCTOSID);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(404, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("BUSCAR POR ID", jPanel7);
@@ -366,7 +417,7 @@ public class InterfazPapeleria extends javax.swing.JFrame {
                 .addComponent(GUARDARREGISTRO, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(ESTATUSS, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(221, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("INGRESAR COSTO", jPanel9);
@@ -391,13 +442,6 @@ public class InterfazPapeleria extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(COSTOSPRODUCTO);
 
-        BUSCARID.setText("BUSCAR POR ID");
-        BUSCARID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BUSCARIDActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -409,10 +453,7 @@ public class InterfazPapeleria extends javax.swing.JFrame {
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(177, 177, 177)
-                        .addComponent(BUSCAREGISTROS))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(BUSCARID, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BUSCAREGISTROS)))
                 .addContainerGap(73, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
@@ -422,22 +463,54 @@ public class InterfazPapeleria extends javax.swing.JFrame {
                 .addComponent(BUSCAREGISTROS)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BUSCARID)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addContainerGap(383, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("BUSCAR TODOS", jPanel10);
+
+        jButton2.setText("BUSCAR COSTO POR ID");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        BUSCARXID.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID COSTO", "ID PRODUCTO", "CANTIDAD", "COSTO COMPRA", "COSTO VENTA", "TOTAL"
+            }
+        ));
+        jScrollPane5.setViewportView(BUSCARXID);
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 543, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 407, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                    .addComponent(jTextField2))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(413, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("BUSCAR POR ID", jPanel11);
@@ -450,7 +523,7 @@ public class InterfazPapeleria extends javax.swing.JFrame {
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 407, Short.MAX_VALUE)
+            .addGap(0, 545, Short.MAX_VALUE)
         );
 
         jTabbedPane3.addTab("ACTUALIZAR COSTO", jPanel12);
@@ -533,21 +606,55 @@ public class InterfazPapeleria extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(GUARDARDATOS)
                 .addGap(18, 18, 18)
-                .addComponent(ESTATU, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+                .addComponent(ESTATU, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
                 .addGap(19, 19, 19))
         );
 
         jTabbedPane4.addTab("INGRESAR VENDEDOR", jPanel13);
 
+        jButton3.setText("BUSCAR VENDEDOR POR ID");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        EMPLEADOSXID.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID VENDEDOR", "ID PRODUCTO", "NOMBRE", "HORARIO"
+            }
+        ));
+        jScrollPane6.setViewportView(EMPLEADOSXID);
+
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 525, Short.MAX_VALUE)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 407, Short.MAX_VALUE)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                    .addComponent(jTextField3))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(418, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("BUSCAR EMPLEADOS", jPanel14);
@@ -560,7 +667,7 @@ public class InterfazPapeleria extends javax.swing.JFrame {
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 407, Short.MAX_VALUE)
+            .addGap(0, 545, Short.MAX_VALUE)
         );
 
         jTabbedPane4.addTab("ACTUALIZAR EMPLEADO", jPanel15);
@@ -615,7 +722,7 @@ public class InterfazPapeleria extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -736,10 +843,6 @@ public class InterfazPapeleria extends javax.swing.JFrame {
         
     }//GEN-LAST:event_BUSCARTODOSActionPerformed
 
-    private void BUSCARIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BUSCARIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BUSCARIDActionPerformed
-
     private void BUSCAREGISTROSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BUSCAREGISTROSActionPerformed
         // TODO add your handling code here:
         
@@ -783,6 +886,160 @@ public class InterfazPapeleria extends javax.swing.JFrame {
        } 
     }//GEN-LAST:event_BUSCAREGISTROSActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        
+            Integer ide=Integer.parseInt(jTextField1.getText());
+        
+              try{
+          //paso 1) establecer conexion a Oracle
+           Connection con=Conexion.conectarse();
+           //paso 2) crear un Statement (sentencia) de sql
+           Statement st=con.createStatement();
+           //paso 3) con el statement invocamos la consulta
+           ResultSet res=st.executeQuery("SELECT * FROM PRODUCTO WHERE ID_PRODUCTO=" +ide+ "order by ID_PRODUCTO");
+          //paso 4) iteramos el ResultSet con un hermoso while 
+           int filas=0;
+           while(res.next()){
+               filas++;
+           } 
+           PRODUCTOSID.
+           setModel(new DefaultTableModel(new String[]
+                   {"ID","NOMBRE","TIPO","PIEZAS"},filas)); 
+           int fila=0;
+           ResultSet res2=st.executeQuery("SELECT * FROM PRODUCTO WHERE ID_PRODUCTO=" +ide+ "order by ID_PRODUCTO");
+           while(res2.next()){
+               Integer ID= res2.getInt(1);
+               String NOMBRE= res2.getString(2);
+               String TIPO= res2.getString(3);
+               Integer PIEZAS= res2.getInt(4);
+               PRODUCTOSID.setValueAt(ID, fila, 0);
+               PRODUCTOSID.setValueAt(NOMBRE, fila, 1);
+               PRODUCTOSID.setValueAt(TIPO, fila, 2);
+               PRODUCTOSID.setValueAt(PIEZAS, fila, 3);
+               fila++;
+           }
+       }catch(Exception e){   
+     // System.out.println(e.getMessage());
+       }
+        
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        
+        
+             Integer id=Integer.parseInt(jTextField2.getText());
+        
+              try{
+          //paso 1) establecer conexion a Oracle
+           Connection con=Conexion.conectarse();
+           //paso 2) crear un Statement (sentencia) de sql
+           Statement st=con.createStatement();
+           //paso 3) con el statement invocamos la consulta
+           ResultSet res=st.executeQuery("SELECT * FROM COSTO WHERE ID_COSTO=" +id+ "order by ID_COSTO");
+          //paso 4) iteramos el ResultSet con un hermoso while 
+           int filas=0;
+           while(res.next()){
+               filas++;
+           } 
+           BUSCARXID.
+           setModel(new DefaultTableModel(new String[]
+                   {"ID COSTO","ID PRODUCTO","CANTIDAD","COSTO COMPRA","COSTO VENTA","TOTAL"},filas)); 
+           int fila=0;
+           ResultSet res2=st.executeQuery("SELECT * FROM COSTO WHERE ID_COSTO=" +id+ "order by ID_COSTO");
+           while(res2.next()){
+               Integer IDCOS= res2.getInt(1);
+               Integer IDPRO= res2.getInt(2);
+               Integer CANTIDAD= res2.getInt(3);
+               Float COSCOMPRA= res2.getFloat(4);
+               Float COSVENTA= res2.getFloat(5);
+               Float TOTAL= res2.getFloat(6);
+               
+               BUSCARXID.setValueAt(IDCOS, fila, 0);
+               BUSCARXID.setValueAt(IDPRO, fila, 1);
+               BUSCARXID.setValueAt(CANTIDAD, fila, 2);
+               BUSCARXID.setValueAt(COSCOMPRA, fila, 3);
+               BUSCARXID.setValueAt(COSVENTA, fila, 4);
+               BUSCARXID.setValueAt(TOTAL, fila, 5);
+               fila++;           }
+       }catch(Exception e){   
+     // System.out.println(e.getMessage());
+       }
+   
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        
+        
+        
+        
+        
+             Integer id=Integer.parseInt(jTextField3.getText());
+        
+              try{
+          //paso 1) establecer conexion a Oracle
+           Connection con=Conexion.conectarse();
+           //paso 2) crear un Statement (sentencia) de sql
+           Statement st=con.createStatement();
+           //paso 3) con el statement invocamos la consulta
+           ResultSet res30=st.executeQuery("SELECT * FROM VENDEDORES WHERE ID_VENDEDOR=" +id+ "order by ID_VENDEDOR");
+          //paso 4) iteramos el ResultSet con un hermoso while 
+           int filas=0;
+           while(res30.next()){
+               filas++;
+           } 
+           EMPLEADOSXID.
+           setModel(new DefaultTableModel(new String[]
+                   {"ID VENDEDOR","ID PRODUCTO","NOMBRE","HORARIO"},filas)); 
+           int fila=0;
+           ResultSet res31=st.executeQuery("SELECT * FROM VENDEDORES WHERE ID_VENDEDOR=" +id+ "order by ID_VENDEDOR");
+           while(res31.next()){
+               Integer IDVE= res31.getInt(1);
+               Integer IDPR= res31.getInt(2);
+               String NOMBRE= res31.getString(3);
+               Integer HORARI= res31.getInt(4);
+               
+               EMPLEADOSXID.setValueAt(IDVE, fila, 0);
+               EMPLEADOSXID.setValueAt(IDPR, fila, 1);
+               EMPLEADOSXID.setValueAt(NOMBRE, fila, 2);
+               EMPLEADOSXID.setValueAt(HORARI, fila, 3);
+               fila++;         
+           }
+       }catch(Exception e){   
+     // System.out.println(e.getMessage());
+       }
+   
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -820,12 +1077,13 @@ public class InterfazPapeleria extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BUSCAREGISTROS;
-    private javax.swing.JButton BUSCARID;
     private javax.swing.JButton BUSCARTODOS;
+    private javax.swing.JTable BUSCARXID;
     private javax.swing.JTextField CANTIDAD;
     private javax.swing.JTextField COSTOCOMPRA;
     private javax.swing.JTable COSTOSPRODUCTO;
     private javax.swing.JTextField COSTOVENTA;
+    private javax.swing.JTable EMPLEADOSXID;
     private javax.swing.JLabel ESTATU;
     private javax.swing.JLabel ESTATUS;
     private javax.swing.JLabel ESTATUSS;
@@ -842,9 +1100,13 @@ public class InterfazPapeleria extends javax.swing.JFrame {
     private javax.swing.JTable MOSTRARTODOS;
     private javax.swing.JTextField NOMBREPRODUCTO;
     private javax.swing.JTextField PIEZAS;
+    private javax.swing.JTable PRODUCTOSID;
     private javax.swing.JTextArea TIPOPRODUCTO;
     private javax.swing.JTextField TOTAL;
     private javax.swing.JTextField VENDEDOR;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -876,9 +1138,15 @@ public class InterfazPapeleria extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
